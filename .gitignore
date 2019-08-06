@@ -32,7 +32,6 @@ HELP.md
 .apt_generated
 .classpath
 .factorypath
-.project
 .settings
 .springBeans
 .sts4-cache
@@ -53,3 +52,8 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+/.metadata/
+
+### Spring Boot ###
+cargoFacil/bin/
+Servers/
