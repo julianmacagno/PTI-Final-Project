@@ -1,15 +1,16 @@
-package com.pti.cargoFacil;
+package com.pti.cargoFacil.beans;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class License {
-
+public class LicenseBean implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private int licenseId;
 	private Date expirationDate;
 	private String licenseType;
 	private String emergencyNumber;
 	
-	public License() {
+	public LicenseBean() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -39,7 +40,7 @@ public class License {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		License other = (License) obj;
+		LicenseBean other = (LicenseBean) obj;
 		if (emergencyNumber == null) {
 			if (other.emergencyNumber != null)
 				return false;

@@ -1,9 +1,10 @@
-package com.pti.cargoFacil;
+package com.pti.cargoFacil.beans;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Shipment {
-	
+public class ShipmentBean implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private int shipmentId;
 	private String origin;
 	private String destination;
@@ -11,7 +12,7 @@ public class Shipment {
 	private Date initDate;
 	private Date arrivalDate;
 	
-	public Shipment() {
+	public ShipmentBean() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -43,7 +44,7 @@ public class Shipment {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Shipment other = (Shipment) obj;
+		ShipmentBean other = (ShipmentBean) obj;
 		if (arrivalDate == null) {
 			if (other.arrivalDate != null)
 				return false;

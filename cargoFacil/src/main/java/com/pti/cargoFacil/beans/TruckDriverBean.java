@@ -1,12 +1,14 @@
-package com.pti.cargoFacil;
+package com.pti.cargoFacil.beans;
 
-public class truckDriver {
+import java.io.Serializable;
 
+public class TruckDriverBean implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private int truckDriverId;
 	private int personId;
 	private int licenseId;
 	
-	public truckDriver() {
+	public TruckDriverBean() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -35,7 +37,7 @@ public class truckDriver {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		truckDriver other = (truckDriver) obj;
+		TruckDriverBean other = (TruckDriverBean) obj;
 		if (licenseId != other.licenseId)
 			return false;
 		if (personId != other.personId)

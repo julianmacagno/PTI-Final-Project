@@ -25,8 +25,8 @@ values  ("Granel"),
         ("Maquinarias"),
         ("Liquidos");
 
-insert into product (name, productType) 
-values ("asd", "asd");
+insert into product (name, productType_key) 
+values ("Soja", 1);
 
 insert into shipment (origin, destination, distance, initDate, arrivalDate, acepted, product, quantity, unit, owner) 
 values ('Oncativo, Cordoba, Argentina', 'Rosario, Santa Fe, Argentina', 325, '2019-05-25', '2019-05-26', 'N', 1, 30000, 'Kg', 1);

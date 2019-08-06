@@ -1,9 +1,10 @@
-package com.pti.cargoFacil;
+package com.pti.cargoFacil.beans;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Person {
-
+public class PersonBean implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private int personId;
 	private String name;
 	private String surname;
@@ -18,8 +19,8 @@ public class Person {
 	private int rating;
 	private String bussinessName;
 	
-	public Person() {
-		super();
+	public PersonBean() {
+		super();	
 		// TODO Auto-generated constructor stub
 	}
 
@@ -59,7 +60,7 @@ public class Person {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Person other = (Person) obj;
+		PersonBean other = (PersonBean) obj;
 		if (address == null) {
 			if (other.address != null)
 				return false;

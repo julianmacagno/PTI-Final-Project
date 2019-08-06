@@ -1,10 +1,12 @@
-package com.pti.cargoFacil;
+package com.pti.cargoFacil.beans;
 
-public class userType {
-	
+import java.io.Serializable;
+
+public class UserTypeBean implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private int userTypeId;
 
-	public userType() {
+	public UserTypeBean() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -30,7 +32,7 @@ public class userType {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		userType other = (userType) obj;
+		UserTypeBean other = (UserTypeBean) obj;
 		if (userTypeId != other.userTypeId)
 			return false;
 		return true;
