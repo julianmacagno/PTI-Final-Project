@@ -20,25 +20,28 @@ create table person (
   rating integer not null,
   bussinessName varchar(50) not null,
   primary key (person_key),
+  unique (dni),
   foreign key (userType) references userType(userType_key)
 );
 
 create table license (
-  licence_key integer not null auto_increment,
+  license_key integer not null auto_increment,
+  ownerDni integer not null,
   expirationDate date not null,
   licenseType varchar(5) not null,
   emergencyNumber varchar(20) not null,
-  primary key (licence_key)
+  unique (ownerDni),
+  primary key (license_key)
 );
 
 create table truckDriver (
   truckDriver_key integer not null auto_increment,
   person_key integer not null,
-  licence_key integer not null,
+  license_key integer not null,
   available char(1) not null,
   primary key (truckDriver_key),
   foreign key (person_key) references person(person_key),
-  foreign key (licence_key) references license(licence_key)
+  foreign key (license_key) references license(license_key)
 );
 
 create table truckType (
@@ -51,8 +54,8 @@ create table truck (
   truck_key integer auto_increment not null,
   owner integer not null,
   plate varchar(10) not null,
-  brand varchar (30) not null,
-  model varchar (30) not null,
+  brand varchar(30) not null,
+  model varchar(30) not null,
   year smallint not null,
   tare smallint not null,
   maxWeigth integer not null,
@@ -61,6 +64,7 @@ create table truck (
   chassisNum integer not null,
   truckType integer not null,
   primary key (truck_key),
+  unique (plate),
   foreign key (owner) references truckDriver(truckDriver_key),
   foreign key (truckType) references truckType(truckType_key)
 );

@@ -4,11 +4,11 @@ values ('Despachante'), ('Camionero');
 insert into person (name, surname, dni, birthDate, userType, cuil_cuit, email, username, password, phoneNumber, address, rating, bussinessName) 
 values ('Julian', 'Macagno', '40028514', '1997-02-04', 2, '20400285145', 'julian.macagno55@gmail.com', 'julianmacagno', 'rivadavia850', '3572552389', 'Rivadavia 850, Oncativo, Cordoba, Argentina', 5, 'Macagno S.A.');
 
-insert into license (expirationDate, licenseType, emergencyNumber) 
-values ('2019-08-02', 'B1', '3572466395');
+insert into license (ownerDni, expirationDate, licenseType, emergencyNumber) 
+values (40028514, '2019-08-02', 'B1', '3572466395');
 
-insert into truckDriver (person_key, licence_key, available)
-values (1,1, 'S');
+insert into truckDriver (person_key, license_key, available)
+values (1, 1, 'S');
 
 insert into truckType (type) 
 values ('Cerealeros'), ('Cisterna Alimenticios'), ('Cisterna Combustibles'), ('Cisterna Quimicos'), ('Playo - Maquinarias'), ('Cargas Generales - Tarimas'), ('Contenedores'), ('Animales'), ('Frigorificos'), ('Volcadores');
