@@ -24,6 +24,7 @@ public class TruckDriverModel {
 				conn.commit();
 				stmt.close();
 			} catch(SQLException e) {
+				System.err.println(e);
 				conn.rollback();
 				return false;
 			} finally {

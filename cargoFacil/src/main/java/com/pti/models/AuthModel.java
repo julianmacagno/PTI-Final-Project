@@ -21,8 +21,7 @@ public class AuthModel {
 				return true;
 			}
 		} catch (Exception e) {
-        	System.out.print("Error: ");
-        	System.out.println(e);
+			System.err.println(e);
         }
 		return false;
 	}
@@ -55,6 +54,7 @@ public class AuthModel {
 				conn.commit();
 				stmt.close();
 			} catch(SQLException e) {
+				System.err.println(e);
 				conn.rollback();
 				return false;
 			} finally {

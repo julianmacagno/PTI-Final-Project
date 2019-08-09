@@ -5,12 +5,14 @@ import java.util.LinkedList;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.pti.cargoFacil.beans.TruckTypeBean;
 import com.pti.models.TruckModel;
 
+@RestController
 public class TruckController {
-	@RequestMapping(value = "/getTruckTypes", method = RequestMethod.POST)
+	@RequestMapping(value = "/getTruckTypes", method = RequestMethod.GET)
 	public LinkedList<TruckTypeBean> getUserTypes() {
 		return TruckModel.getTruckTypes();
 	}

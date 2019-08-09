@@ -88,6 +88,8 @@ begin
 
 end $$
 
+#---------------------------------------------------------------------------------------------------
+
 drop procedure if exists getUserTypes $$
 create procedure getUserTypes()
 begin
@@ -101,6 +103,8 @@ begin
     select *
     from truckType;
 end $$
+
+#---------------------------------------------------------------------------------------------------
 
 drop procedure if exists registerTruck $$
 create procedure registerTruck (
@@ -121,5 +125,7 @@ begin
     values (parameter_owner, parameter_plate, parameter_brand, parameter_model, parameter_year, parameter_tare,
             parameter_maxWeigth, parameter_maxVolume, parameter_axlesNum, parameter_chassisNum, parameter_truckType);
 end $$
+
+#---------------------------------------------------------------------------------------------------
 
 delimiter ;

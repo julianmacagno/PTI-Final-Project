@@ -16,13 +16,12 @@ public class UserModel {
 			Connection connection = DriverManager.getConnection ("jdbc:mysql://localhost/cargoFacil","julianmacagno", "rivadavia850");
 			CallableStatement stmt = connection.prepareCall("call getUserTypes()");
 			ResultSet rs = stmt.executeQuery();
-			if(rs.next()) {
+			while(rs.next()) {
 				userTypesList.add(new UserTypeBean(rs.getInt("userType_key"), rs.getString("type")));
 			}
 			connection.close();
 		} catch (Exception e) {
-        	System.out.print("Error: ");
-        	System.out.println(e);
+			System.err.println(e);
         }		
 		return userTypesList;
 	}

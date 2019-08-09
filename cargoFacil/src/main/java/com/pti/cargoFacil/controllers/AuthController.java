@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pti.models.AuthModel;
 
-
 @RestController
 public class AuthController {
 	

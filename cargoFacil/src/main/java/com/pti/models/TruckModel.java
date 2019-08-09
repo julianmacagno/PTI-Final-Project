@@ -2,14 +2,12 @@ package com.pti.models;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
 import com.pti.cargoFacil.beans.TruckTypeBean;
-import com.pti.cargoFacil.beans.UserTypeBean;
 
 public class TruckModel {
 	public static LinkedList<TruckTypeBean> getTruckTypes() {
@@ -19,13 +17,12 @@ public class TruckModel {
 			Connection connection = DriverManager.getConnection ("jdbc:mysql://localhost/cargoFacil","julianmacagno", "rivadavia850");
 			CallableStatement stmt = connection.prepareCall("call getTruckTypes()");
 			ResultSet rs = stmt.executeQuery();
-			if(rs.next()) {
+			while(rs.next()) {
 				truckTypesList.add(new TruckTypeBean(rs.getInt("truckType_key"), rs.getString("type")));
 			}
 			connection.close();
 		} catch (Exception e) {
-        	System.out.print("Error: ");
-        	System.out.println(e);
+			System.err.println(e);
         }		
 		return truckTypesList;
 	}
@@ -56,6 +53,7 @@ public class TruckModel {
 				conn.commit();
 				stmt.close();
 			} catch(SQLException e) {
+				System.err.println(e);
 				conn.rollback();
 				return false;
 			} finally {
