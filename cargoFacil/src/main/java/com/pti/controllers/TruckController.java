@@ -1,5 +1,6 @@
-package com.pti.cargoFacil.controllers;
+package com.pti.controllers;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pti.cargoFacil.beans.TruckTypeBean;
+import com.pti.beans.TruckTypeBean;
 import com.pti.models.TruckModel;
 
 @RestController
@@ -19,7 +20,7 @@ public class TruckController {
 	
 	
 	@RequestMapping(value = "/insertTruck", method = RequestMethod.POST)
-	public String insertTruck(@RequestParam(value="owner") String owner, 
+	public HashMap<String, String> insertTruck(@RequestParam(value="owner") String owner, 
 							  @RequestParam(value="plate") String plate, 
 							  @RequestParam(value="brand") String brand,
 							  @RequestParam(value="model") String model,
@@ -30,6 +31,12 @@ public class TruckController {
 							  @RequestParam(value="axleNum") String axleNum,
 							  @RequestParam(value="chassisNum") String chassisNum,
 							  @RequestParam(value="truckType") String truckType) {
-		return (TruckModel.insertTruck(owner, plate, brand, model, year, tare, maxWeigth, maxVolume, axleNum, chassisNum, truckType) ? "Ok" : "Error");
+		HashMap<String, String> map = new HashMap<String, String>();
+		if(TruckModel.insertTruck(owner, plate, brand, model, year, tare, maxWeigth, maxVolume, axleNum, chassisNum, truckType)) {
+			map.put("status", "Ok");
+		} else {
+			map.put("status", "Error");
+		}
+		return map;
     }
 }

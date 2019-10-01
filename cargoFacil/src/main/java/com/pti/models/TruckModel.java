@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
-import com.pti.cargoFacil.beans.TruckTypeBean;
+import com.pti.beans.TruckTypeBean;
 
 public class TruckModel {
 	public static LinkedList<TruckTypeBean> getTruckTypes() {

@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.LinkedList;
 
-import com.pti.cargoFacil.beans.UserTypeBean;
+import com.pti.beans.UserTypeBean;
 
 public class UserModel {
 	public static LinkedList<UserTypeBean> getUserTypes() {

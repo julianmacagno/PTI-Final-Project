@@ -1,4 +1,4 @@
-package com.pti.cargoFacil.beans;
+package com.pti.beans;
 
 import java.io.Serializable;
 

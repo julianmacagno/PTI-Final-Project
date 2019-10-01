@@ -1,4 +1,4 @@
-package com.pti.cargoFacil.controllers;
+package com.pti.controllers;
 
 import java.util.LinkedList;
 
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pti.cargoFacil.beans.UserTypeBean;
+import com.pti.beans.UserTypeBean;
 import com.pti.models.UserModel;
 
 @RestController

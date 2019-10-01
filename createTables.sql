@@ -86,8 +86,10 @@ create table product (
 create table shipment (
   shipment_key integer not null auto_increment,
   origin varchar(30) not null,
+  originAddress varchar(100) not null,
   destination varchar(30) not null,
-  distance smallint not null,
+  destinationAddress varchar(100) not null,
+  distance varchar(30) not null,
   initDate date not null, 
   arrivalDate date not null,
   acepted char(1) not null,

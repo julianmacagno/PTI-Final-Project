@@ -28,8 +28,8 @@ values  ("Granel"),
 insert into product (name, productType_key) 
 values ("Soja", 1);
 
-insert into shipment (origin, destination, distance, initDate, arrivalDate, acepted, product, quantity, unit, owner) 
-values ('Oncativo, Cordoba, Argentina', 'Rosario, Santa Fe, Argentina', 325, '2019-05-25', '2019-05-26', 'N', 1, 30000, 'Kg', 1);
+insert into shipment (origin, originAddress, destination, destinationAddress, distance, initDate, arrivalDate, acepted, product, quantity, unit, owner) 
+values ('-31.9135378,-63.678862', 'Rivadavia 850, Oncativo, Cordoba, Argentina', '-32.9448139,-60.7190005', 'Neuquén 7267, S2008DAM Rosario, Santa Fe, Argentina', '325 km', '2019-05-25', '2019-05-26', 'N', 1, 30000, 'Kg', 1);
 
 insert into truckDriverTravel (truck, shipment) 
 values (1, 1);

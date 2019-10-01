@@ -1,0 +1,24 @@
+Para compilar el projecto, te paras dentro del projecto y ejecutas:
+
+	./mvnw clean package
+
+Esto te genera un .jar dentro de target/ que debe ser movido al servidor AWS junto con los archivos .sql y .sh actualizados. Para ello, usamos scp de la siguiente manera: 
+
+	scp -i cargofacil.pem cargoFacil/target/cargoFacil-0.0.1.jar ubuntu@3.14.63.150:/home/ubuntu/
+	scp -i cargofacil.pem *.sh ubuntu@3.14.63.150:/home/ubuntu/
+	scp -i cargofacil.pem *.sql ubuntu@3.14.63.150:/home/ubuntu/
+
+Si te dice que los permisos de la clave son muy abiertos, ejecuta:
+
+	chmod 400 cargoFacil.pem
+
+Luego, entramos en la consola de AWS con:
+
+	ssh -i cargofacil.pem ubuntu@3.14.63.150
+
+Ejecutamos el script resetDatabase.sh para limpiar y reinsertar los valores de la base de datos actualizada; o bien el script configureDatabase.sh para reinstalar mysql, reasignar los usuarios y permisos e inicializar la base de datos.
+
+Luego ejecutamos el .jar creado para ejecutar el server con:
+
+java -jar cargoFacil-0.0.1.jar
+

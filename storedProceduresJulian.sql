@@ -128,4 +128,26 @@ end $$
 
 #---------------------------------------------------------------------------------------------------
 
+drop procedure if exists insertShipment $$
+create procedure insertShipment (
+    in parameter_origin varchar(30),
+	in parameter_originAddress varchar(100),
+    in parameter_destination varchar(30),
+	in parameter_destinationAddress varchar(100),
+    in parameter_distance varchar(30),
+    in parameter_initDate date,
+    in parameter_arrivalDate date,
+    in parameter_acepted char(1),
+    in parameter_product integer,
+    in parameter_quantity int,
+    in parameter_unit varchar(5),
+    in parameter_owner int
+)
+begin
+    insert into shipment(origin, originAddress, destination, destinationAddress, distance, initDate, arrivalDate, acepted, product, quantity, unit, owner)
+    values (parameter_origin, parameter_originAddress, parameter_destination, parameter_destinationAddress, parameter_distance, parameter_initDate, parameter_arrivalDate, parameter_acepted, parameter_product, parameter_quantity, parameter_unit, parameter_owner);
+end $$
+
+#---------------------------------------------------------------------------------------------------
+
 delimiter ;
